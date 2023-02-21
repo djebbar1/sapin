@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" type="javascript" href="/Téléchargements/confetti.min.js">
+  <link rel="stylesheet" type="text/css" href="css/snowfall.css">
+<body>
+<h1 style="text-align:center" >Sapin de noel</h1>
+
+<div class="snowflakes" aria-hidden="true">
+  <div class="intro">  <a href="https://codeconvey.com"></a></div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❄
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❄
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❄
+  </div>
+</div>
+<div id="pos">
+
+
+<div id="triangle" width="50" height="50"></div>
+<div id="triangle2" width="150" height="150"></div>
+<div id="triangle3" width="250" height="250"></div>
+<div id="triangle4" width="350" height="350"></div>
+
+<div id="rectangle" width="250" height="300"></div>
+
+<div id="rond" width="50" height="50"></div>
+<div id="rond2" width="50" height="50"></div>
+<div id="rond3" width="50" height="50"></div>
+<div id="rond4" width="50" height="50"></div>
+<div id="rond5" width="50" height="50"></div>
+<div id="rond6" width="50" height="50"></div>
+<div id="rond7" width="50" height="50"></div>
+<div id="rond8" width="50" height="50"></div>
+<div id="rond9" width="50" height="50"></div>
+<div id="rond10" width="50" height="50"></div>
+<div id="rond11" width="50" height="50"></div>
+<div id="rond12" width="50" height="50"></div>
+<div id="body" width="100%"  height="100%"></div>
+
+<!--   <a href="Téléchargements/confetti.min.js"> </a>     -->
+  <img id="im" src="https://blog.domadoo.fr/wp-content/uploads/2016/12/titre_cadeau.jpeg" width="30%" onclick="open(confetti)" >
+
+</div>
+
+
+</html>
+
+
+<script>
+  setInterval(diminuerTemps, 1000)
+    let temps = 100
+      const timerElement = document.getElementById("im")
+
+      function diminuerTemps() {
+        timerElement.innerFillStyle = temps
+        temps--
+
+      }
+      if(onclick==true){
+        document.getElementById('im').innerIm
+        diminuerTemps();
+        //connfetti
+
+      }
+  function open(){
+
+
+
+
+// Pass in the id of an element
+let confetti = new Confetti('im');
+
+// Edit given parameters
+confetti.setCount(75);
+confetti.setSize(1);
+confetti.setPower(25);
+confetti.setFade(false);
+confetti.destroyTarget(true);
+
+
+
+
+
+
+
+
+var Confetti=function(){
+  var t=function(){
+    return function(){
+      this.gravity=10,this.particle_count=75,this.particle_size=1,this.explosion_power=25,this.destroy_target=!0,this.fade=!1}}(),e=function(){function e(n){var r=this;
+      if(this.bursts=[],this.setCount=function(t){
+        if("number"!=typeof t)throw new Error("Input must be of type 'number'");
+        e.CONFIG.particle_count=t},this.setPower=function(t){
+          if("number"!=typeof t)throw new Error("Input must be of type 'number'");
+          e.CONFIG.explosion_power=t},this.setSize=function(t){
+            if("number"!=typeof t)throw new Error("Input must be of type 'number'");
+            e.CONFIG.particle_size=t},this.setFade=function(t){
+              if("boolean"!=typeof t)throw new Error("Input must be of type 'boolean'");
+              e.CONFIG.fade=t},this.destroyTarget=function(t){
+                if("boolean"!=typeof t)throw new Error("Input must be of type 'boolean'");
+                e.CONFIG.destroy_target=t},this.setupCanvasContext=function(){
+                  if(!e.CTX){
+                    var t=document.createElement("canvas");
+                    e.CTX=t.getContext("2d"),t.width=2*window.innerWidth,t.height=2*window.innerHeight,t.style.position="fixed",t.style.top="0",t.style.left="0",t.style.width="calc(100%)",t.style.height="calc(100%)",t.style.margin="0",t.style.padding="0",t.style.zIndex="999999999",t.style.pointerEvents="none",document.body.appendChild(t),window.addEventListener("resize",function(){t.width=2*window.innerWidth,t.height=2*window.innerHeight})}},this.setupElement=function(t){var n;r.element=document.getElementById(t),null===(n=r.element)||void 0===n||n.addEventListener("click",function(t){var n=new o(2*t.clientX,2*t.clientY);r.bursts.push(new i(n)),e.CONFIG.destroy_target&&(r.element.style.visibility="hidden")})},this.update=function(t){r.delta_time=(t-r.time)/1e3,r.time=t;for(var e=r.bursts.length-1;e>=0;e--)r.bursts[e].update(r.delta_time),0==r.bursts[e].particles.length&&r.bursts.splice(e,1);r.draw(),window.requestAnimationFrame(r.update)},!n)throw new Error("Missing id");e.CONFIG||(e.CONFIG=new t),this.time=(new Date).getTime(),this.delta_time=0,this.setupCanvasContext(),this.setupElement(n),window.requestAnimationFrame(this.update)}return e.prototype.draw=function(){s.clearScreen();for(var t=0,e=this.bursts;t<e.length;t++){e[t].draw()}},e}(),i=function(){function t(t){this.particles=[];for(var i=0;i<e.CONFIG.particle_count;i++)this.particles.push(new n(t))}return t.prototype.update=function(t){for(var e=this.particles.length-1;e>=0;e--)this.particles[e].update(t),this.particles[e].checkBounds()&&this.particles.splice(e,1)},t.prototype.draw=function(){for(var t=this.particles.length-1;t>=0;t--)this.particles[t].draw()},t}(),n=function(){function t(t){this.size=new o((16*Math.random()+4)*e.CONFIG.particle_size,(4*Math.random()+4)*e.CONFIG.particle_size),this.position=new o(t.x-this.size.x/2,t.y-this.size.y/2),this.velocity=r.generateVelocity(),this.rotation=360*Math.random(),this.rotation_speed=10*(Math.random()-.5),this.hue=360*Math.random(),this.opacity=100,this.lifetime=Math.random()+.25}return t.prototype.update=function(t){this.velocity.y+=e.CONFIG.gravity*(this.size.y/(10*e.CONFIG.particle_size))*t,this.velocity.x+=25*(Math.random()-.5)*t,this.velocity.y*=.98,this.velocity.x*=.98,this.position.x+=this.velocity.x,this.position.y+=this.velocity.y,this.rotation+=this.rotation_speed,e.CONFIG.fade&&(this.opacity-=this.lifetime)},t.prototype.checkBounds=function(){return this.position.y-2*this.size.x>2*window.innerHeight},t.prototype.draw=function(){s.drawRectangle(this.position,this.size,this.rotation,this.hue,this.opacity)},t}(),o=function(){return function(t,e){this.x=t||0,this.y=e||0}}(),r=function(){function t(){}return t.generateVelocity=function(){var t=Math.random()-.5,i=Math.random()-.7,n=Math.sqrt(t*t+i*i);return i/=n,new o((t/=n)*(Math.random()*e.CONFIG.explosion_power),i*(Math.random()*e.CONFIG.explosion_power))},t}(),s=function(){function t(){}return t.clearScreen=function(){e.CTX&&e.CTX.clearRect(0,0,2*window.innerWidth,2*window.innerHeight)},t.drawRectangle=function(t,i,n,o,r){e.CTX&&(e.CTX.save(),e.CTX.beginPath(),e.CTX.translate(t.x+i.x/2,t.y+i.y/2),e.CTX.rotate(n*Math.PI/180),e.CTX.rect(-i.x/2,-i.y/2,i.x,i.y),e.CTX.fillStyle="hsla("+o+"deg, 90%, 65%, "+r+"%)",e.CTX.fill(),e.CTX.restore())},t}();return e}();
+}
+</script>
+<style>
+  h1{
+    color:rgb(238, 39, 178);
+  }
+  img{
+    position: absolute;
+    top: 1400px;
+    left: 600px;
+    background:transparent;
+  }
+
+html{
+ height: 1500px;
+background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2f-U8IwYaBe77MvtZNL7RwKu_OOJRrX5jEQ&usqp=CAU');
+background-repeat:no-repeat;
+background-size: contain;
+background-size: 100% 100%;
+}
+#etoile{
+
+  position: absolute;
+	top:30px;
+	left:-50px;
+	background:transparent;
+	margin:100px auto;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 100px solid yellow;
+	position: relative;
+  transform:rotate(360deg);
+}
+#etoile:after{
+	content:'';
+	border: 1px solid yellow;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 100px solid yellow;
+	width:0;
+	height:0;
+	position: absolute;
+	top:30px;
+	left:-50px;
+}
+#triangle{
+  position: absolute;
+	top:200px;
+	left:800px;
+	width:1px;
+	height:1px;
+	border:1px solid green;
+	border-color:transparent transparent green transparent;
+	border-width:100px;
+}
+#triangle2{
+  position: absolute;
+	top:150px;
+	left:700px;
+	width:1px;
+	height:1px;
+	border:1px solid green;
+	border-color:transparent transparent green transparent;
+	border-width:200px;
+}
+#triangle3{
+  position: absolute;
+	top:150px;
+	left:600px;
+	width:1px;
+	height:1px;
+	border:1px solid green;
+	border-color:transparent transparent green transparent;
+	border-width:300px;
+}
+#triangle4{
+  position: absolute;
+	top:150px;
+	left:500px;
+	height:1px;
+	border:1px solid green;
+	border-color:transparent transparent green transparent;
+	border-width:400px;
+}
+#rectangle{
+  position: absolute;
+  top: 1150px;
+  left: 900px;
+  background:rgb(116, 84, 42);
+	width:150px;
+	height:400px;
+
+}
+#rond{
+	width:60px;
+	height:60px;
+	background:#069;
+	-webkit-border-radius:30px;
+	-moz-border-radius:30px;
+	-o-border-radius:30px;
+	border-radius:30px;
+  position: absolute;
+  top: 400px;
+  left: 770px;
+  animation-name: rond;
+  animation-duration: 12s;
+}
+  @keyframes rond {
+  0%   {background-color: #FFF8DC;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+
+}
+#rond2{
+	width:60px;
+	height:60px;
+	background:#069;
+	-webkit-border-radius:30px;
+	-moz-border-radius:30px;
+	-o-border-radius:30px;
+	border-radius:30px;
+  position: absolute;
+  top: 400px;
+  left: 870px;
+  animation-name: rond2;
+  animation-duration: 12s;
+}
+  @keyframes rond2 {
+  0%   {background-color: gray;}
+  25%  {background-color: yellow;}
+  50%  {background-color: red;}
+  100% {background-color: orange;}
+
+}
+#rond3{
+	width:60px;
+	height:60px;
+	background:#069;
+	-webkit-border-radius:30px;
+	-moz-border-radius:30px;
+	-o-border-radius:30px;
+	border-radius:30px;
+  position: absolute;
+  top: 400px;
+  left: 970px;
+  animation-name: rond3;
+  animation-duration: 12s;
+}
+  @keyframes rond3 {
+  0%   {background-color: rgb(34, 151, 167);}
+  25%  {background-color: yellow;}
+  50%  {background-color: rgb(41, 161, 115);}
+  100% {background-color: rgb(165, 56, 123);}
+
+
+}
+
+#rond4{
+	width:60px;
+	height:60px;
+	background:#069;
+	-webkit-border-radius:30px;
+	-moz-border-radius:30px;
+	-o-border-radius:30px;
+	border-radius:30px;
+  position: absolute;
+  top: 550px;
+  left: 670px;
+  animation-name: cercle4;
+  animation-duration: 12s;
+}
+  @keyframes cercle4 {
+  0%   {background-color: rgb(90, 90, 47);}
+  25%  {background-color: rgba(0, 255, 85, 0.699);}
+  50%  {background-color: rgb(122, 122, 212);}
+  100% {background-color: rgb(185, 160, 19);}
+
+
+}
+#rond5{
+	width:60px;
+	height:60px;
+	background:#069;
+	-webkit-border-radius:30px;
+	-moz-border-radius:30px;
+	-o-border-radius:30px;
+	border-radius:30px;
+  position: absolute;
+  top: 550px;
+  left: 870px;
+  animation-name: rond5;
+  animation-duration: 12s;
+}
+  @keyframes rond5 {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+
+}
+#rond6{
+	width:60px;
+	height:60px;
+	background:#069;
+	-webkit-border-radius:30px;
+	-moz-border-radius:30px;
+	-o-border-radius:30px;
+	border-radius:30px;
+  position: absolute;
+  top: 550px;
+  left: 1070px;
+  animation-name: rond6;
+  animation-duration: 12s;
+}
+  @keyframes rond6 {
+  0%  {background-color: blue;}
+  25%   {background-color: red;}
+  50%  {background-color: yellow;}
+  100% {background-color: green;}
+
+}
+
+
+#rond7{
+	width:60px;
+	height:60px;
+	background:#069;
+	-webkit-border-radius:30px;
+	-moz-border-radius:30px;
+	-o-border-radius:30px;
+	border-radius:30px;
+  position: absolute;
+  top: 750px;
+  left: 570px;
+  animation-name: rond7;
+  animation-duration: 12s;
+}
+  @keyframes rond7 {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+
+}
+#rond8{
+	width:60px;
+	height:60px;
+	background:#069;
+	-webkit-border-radius:30px;
+	-moz-border-radius:30px;
+	-o-border-radius:30px;
+	border-radius:30px;
+  position: absolute;
+  top: 750px;
+  left: 870px;
+  animation-name: rond8;
+  animation-duration: 122s;
+}
+  @keyframes rond8 {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+
+
+}
+#rond9{
+	width:60px;
+	height:60px;
+	background:#069;
+	-webkit-border-radius:30px;
+	-moz-border-radius:30px;
+	-o-border-radius:30px;
+	border-radius:30px;
+  position: absolute;
+  top: 750px;
+  left: 1170px;
+  animation-name: rond9;
+  animation-duration: 12s;
+}
+  @keyframes rond9 {
+  0%   {background-color: #FFF8DC;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+
+}
+#rond10{
+	width:60px;
+	height:60px;
+	background:#069;
+	-webkit-border-radius:30px;
+	-moz-border-radius:30px;
+	-o-border-radius:30px;
+	border-radius:30px;
+  position: absolute;
+  top: 950px;
+  left: 470px;
+  animation-name: rond10;
+  animation-duration: 12s;
+}
+  @keyframes rond10 {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+
+}
+#rond11{
+	width:60px;
+	height:60px;
+	background:#069;
+	-webkit-border-radius:30px;
+	-moz-border-radius:30px;
+	-o-border-radius:30px;
+	border-radius:30px;
+  position: absolute;
+  top: 950px;
+  left: 870px;
+  animation-name: rond11;
+  animation-duration: 12s;
+}
+  @keyframes rond11 {
+  0%   {background-color: gray;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+
+
+}
+#rond12{
+	width:60px;
+	height:60px;
+	background:#069;
+	-webkit-border-radius:30px;
+	-moz-border-radius:30px;
+	-o-border-radius:30px;
+	border-radius:30px;
+  position: absolute;
+  top: 950px;
+  left: 1270px;
+  animation-name: rond12;
+  animation-duration: 12s;
+}
+  @keyframes rond12 {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+
+}
+
+.intro,
+.intro a{
+  color:#fff;
+ /* font-family: */
+}
+/* customizable snowflake styling */
+.snowflake {
+  color: #fff;
+  font-size: 1em;
+  font-family: Arial;
+  text-shadow: 0 0 1px #000;
+}
+
+@-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%{-webkit-transform:translateX(0px);transform:translateX(0px)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}100%{-webkit-transform:translateX(0px);transform:translateX(0px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}
+/* Demo Purpose Only*/
+.demo {
+  font-family: 'Raleway', sans-serif;
+	color:#fff;
+    display: block;
+    margin: 0 auto;
+    padding: 15px 0;
+    text-align: center;
+}
+.demo a{
+  font-family: 'Raleway', sans-serif;
+color: #000;
+}
+</style>
